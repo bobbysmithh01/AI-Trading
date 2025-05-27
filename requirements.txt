@@ -1,4 +1,4 @@
-
 streamlit
-requests
+pandas
 MetaTrader5
+python-telegram-bot==13.15
