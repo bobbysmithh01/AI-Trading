@@ -1,4 +1,13 @@
 
 def run_strategy(symbol):
-    # Mock strategy logic
-    return {"symbol": symbol, "entry": 2000, "exit": 2010, "pnl": 10}
+    # Simulated strategy logic
+    entry = 100.0
+    exit = 102.0
+    pnl = round(exit - entry, 2)
+    return {
+        "symbol": symbol,
+        "entry_price": entry,
+        "exit_price": exit,
+        "pnl": pnl,
+        "status": "simulated"
+    }

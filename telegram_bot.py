@@ -8,5 +8,5 @@ def send_telegram_alert(message):
     payload = {"chat_id": chat_id, "text": message}
     try:
         requests.post(url, data=payload)
-    except:
-        pass
+    except Exception as e:
+        print("Telegram error:", e)

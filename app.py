@@ -1,9 +1,8 @@
 
 import streamlit as st
-from mt5_connector import connect_to_mt5, get_account_info
+import json
 from strategy import run_strategy
 from telegram_bot import send_telegram_alert
-import json
 
 st.set_page_config(page_title="AI Trading Bot Dashboard", layout="wide")
 st.title("📈 AI Trading Bot Dashboard")
@@ -33,5 +32,5 @@ if st.session_state.logged_in:
     if run:
         st.write(f"Running strategy for {symbol}...")
         result = run_strategy(symbol)
-        st.write(result)
-        send_telegram_alert(f"Test trade executed on {symbol}: {result}")
+        st.json(result)
+        send_telegram_alert(f"Paper trade executed on {symbol}: {result}")
